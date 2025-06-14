@@ -97,6 +97,20 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInCard 1s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .card:hover {
@@ -111,10 +125,26 @@
     }
 
     .kontak {
-      background-color: #222;
+      background: linear-gradient(135deg, #222 50%, #333 50%);
       color: white;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kontak::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+      animation: waveAnim 10s linear infinite;
+    }
+
+    @keyframes waveAnim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     footer {
@@ -136,10 +166,12 @@
       margin-top: 10px;
       border-radius: 5px;
       cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
     }
 
     button:hover {
       background-color: #e65c00;
+      transform: scale(1.05);
     }
 
     @keyframes fadeIn {
@@ -168,4 +200,50 @@
     </div>
   </header>
 
-  <section class="he
+  <section class="hero">
+    <h2>Promo Spesial Hari Ini!</h2>
+    <p>Diskon besar untuk semua produk fashion pria & wanita!</p>
+  </section>
+
+  <section id="produk" class="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="produk-grid">
+      <div class="card">
+        <img src="images/produk1.jpg" alt="Produk 1">
+        <h3>Kemeja Pria Premium</h3>
+        <p>Rp 199.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="images/produk2.jpg" alt="Produk 2">
+        <h3>Celana Slim Fit</h3>
+        <p>Rp 179.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="images/produk3.jpg" alt="Produk 3">
+        <h3>Kaos Casual Wanita</h3>
+        <p>Rp 99.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.</p>
+  </footer>
+
+  <script>
+    let count = 0;
+    function tambahKeranjang() {
+      count++;
+      document.getElementById("cart-count").textContent = count;
+    }
+  </script>
+</body>
+</html>
