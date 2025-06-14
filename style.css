@@ -16,3 +16,5 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.4); /* lapisan gelap transparan */
 }
+.banner-animasi img {
+  opacity: 0.3;
