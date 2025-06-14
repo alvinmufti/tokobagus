@@ -13,13 +13,17 @@
       font-family: 'Segoe UI', sans-serif;
     }
     body {
-      background: linear-gradient(to bottom, #fff9c4, #f8bbd0, #e1f5fe);
+      background: linear-gradient(to bottom, #fffde7, #fce4ec, #e3f2fd);
       color: #333;
+      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(90deg, #ff6f00, #d500f9);
-      padding: 1rem 0;
+      background: linear-gradient(135deg, #ff6f00, #d500f9);
+      padding: 2rem 0 4rem;
       color: white;
+      position: relative;
+      clip-path: ellipse(100% 80% at 50% 0%);
+      animation: fadeInDown 1s ease-out;
     }
     header .container {
       display: flex;
@@ -31,73 +35,84 @@
     .logo {
       width: 50px;
       margin-right: 10px;
+      animation: rotateIn 2s ease;
     }
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-left: 10px;
     }
     .tagline {
-      font-size: 1rem;
-      color: #fce4ec;
+      font-size: 1.1rem;
+      color: #f8bbd0;
     }
     nav {
       display: flex;
       gap: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.3s;
+    }
+    nav a:hover {
+      transform: scale(1.1);
     }
     .hero {
-      background: linear-gradient(45deg, #81d4fa, #ffccbc);
-      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #4fc3f7, #ffccbc);
+      padding: 4rem 1rem 3rem;
       text-align: center;
       color: #263238;
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+      animation: slideInUp 1s ease;
     }
     .hero h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #4a148c;
     }
     .hero p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
     }
     .produk {
-      padding: 2rem;
+      padding: 3rem 2rem;
       background: #f3e5f5;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
+      animation: fadeInUp 1s ease;
     }
     .produk h2 {
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: #880e4f;
+      font-size: 2rem;
     }
     .produk-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
     .card {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 1rem;
+      background: linear-gradient(145deg, #ffffff, #e1bee7);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      padding: 1.5rem;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease;
+      animation: zoomIn 1s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
     }
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 15px;
     }
     .card h3 {
       margin: 1rem 0 0.5rem;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: #00796b;
     }
     .card p {
@@ -109,8 +124,8 @@
       background: linear-gradient(90deg, #43a047, #66bb6a);
       color: white;
       border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 20px;
+      padding: 0.7rem 1.4rem;
+      border-radius: 25px;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -119,9 +134,11 @@
     }
     .kontak {
       background: #ffe082;
-      padding: 2rem;
+      padding: 2.5rem;
       text-align: center;
       color: #5d4037;
+      clip-path: ellipse(100% 100% at 50% 100%);
+      animation: fadeIn 1s ease;
     }
     footer {
       background: #3f51b5;
@@ -141,6 +158,26 @@
       nav a {
         margin: 0.5rem 0;
       }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(100px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes rotateIn {
+      from { opacity: 0; transform: rotate(-360deg); }
+      to { opacity: 1; transform: rotate(0); }
     }
   </style>
 </head>
@@ -192,7 +229,7 @@
 
   <section id="kontak" class="kontak">
     <h2>Hubungi Kami</h2>
-    <p>Email: cs@tokoalvin.id | WhatsApp: 0812-3456-7890</p>
+    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
   </section>
 
   <footer>
