@@ -1,115 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-body {
-  background: linear-gradient(to bottom, #f4f6f8, #d6e4f0);
-  color: #333;
-}
-header {
-  background-color: #283593;
-  padding: 1rem 0;
-  color: white;
-}
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
-.logo {
-  width: 40px;
-  margin-right: 10px;
-}
-header h1 {
-  font-size: 1.8rem;
-  margin-left: 10px;
-}
-.tagline {
-  font-size: 0.9rem;
-  color: #bbdefb;
-}
-nav a {
-  color: white;
-  margin-left: 1rem;
-  text-decoration: none;
-  font-weight: 500;
-}
-.hero {
-  background: #f9fbe7;
-  padding: 2rem;
-  text-align: center;
-}
-.hero h2 {
-  font-size: 2rem;
-  color: #2e7d32;
-}
-.hero p {
-  margin-top: 0.5rem;
-  color: #4e342e;
-}
-.produk {
-  padding: 2rem;
-}
-.produk h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.produk-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 1rem;
-  text-align: center;
-}
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-.card h3 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1.2rem;
-  color: #3f51b5;
-}
-.card p {
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-.card button {
-  background: #0288d1;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.kontak {
-  background: #ede7f6;
-  padding: 2rem;
-  text-align: center;
-}
-footer {
-  background: #1a237e;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-@media(max-width: 600px) {
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
   }
+
+  header {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-animasi {
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .banner-animasi img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: gerakBanner 20s linear infinite;
+  }
+
+  @keyframes gerakBanner {
+    0% { transform: scale(1) translateX(0); }
+    50% { transform: scale(1.05) translateX(-10%); }
+    100% { transform: scale(1) translateX(0); }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 80px;
+    margin-right: 20px;
+  }
+
   nav a {
-    display: block;
-    margin: 0.5rem 0;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
   }
-}
+
+  nav a.cart {
+    background: #ff6600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .hero {
+    background-color: #ffcc00;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 240px;
+  }
+
+  .produk {
+    padding: 40px 20px;
+  }
+
+  .produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .kontak {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  a {
+    color: #ff6600;
+  }
+
+  button {
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #e65c00;
+  }
+</style>
