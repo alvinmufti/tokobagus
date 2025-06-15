@@ -6,7 +6,7 @@
   <title>Toko Alvin - Tempat Belanja Termurah</title>
   <link rel="icon" href="images/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     body {
@@ -22,13 +22,14 @@
       color: white;
       padding: 30px 0;
       position: relative;
+      overflow: hidden;
     }
 
     header .overlay {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
 
@@ -39,7 +40,6 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 20px;
-      flex-wrap: wrap;
     }
 
     header .logo {
@@ -55,7 +55,7 @@
     .tagline {
       margin: 0;
       font-size: 14px;
-      opacity: 0.9;
+      opacity: 0.8;
     }
 
     nav a {
@@ -73,24 +73,12 @@
     .hero {
       text-align: center;
       padding: 50px 20px;
-      background: linear-gradient(to right, #f8cdda, #1d2b64);
-      color: white;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      animation: popUp 0.7s ease;
-    }
-
-    @keyframes popUp {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      background: #f2f2f2;
     }
 
     .produk {
       padding: 40px 20px;
-      background: #fefefe;
+      background: #fff;
     }
 
     .produk-grid {
@@ -101,9 +89,9 @@
     }
 
     .card {
-      background: #fff;
+      background: #fafafa;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
       width: 250px;
@@ -121,28 +109,24 @@
 
     .card h3 {
       margin: 10px 0 5px;
-      color: #222;
     }
 
     .card p {
       margin: 0 0 10px;
       font-weight: bold;
-      color: #e91e63;
     }
 
     .card button {
-      background: #00bcd4;
+      background: #ff6600;
       color: white;
       padding: 8px 15px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
     }
 
     .card button:hover {
-      background: #0097a7;
-      animation: pulse 0.6s infinite alternate;
+      animation: pulse 0.8s infinite alternate;
     }
 
     @keyframes pulse {
@@ -151,7 +135,7 @@
     }
 
     .kontak {
-      background: #1e1e1e;
+      background: #222;
       color: white;
       padding: 40px 20px;
       text-align: center;
@@ -168,11 +152,6 @@
       text-align: center;
       padding: 20px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
@@ -186,7 +165,7 @@
   <!-- Header -->
   <header>
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container" data-aos="fade-down">
       <img src="images/logo.png" alt="Logo Toko Alvin" class="logo" />
       <div>
         <h1>Toko Alvin</h1>
@@ -203,28 +182,28 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" data-aos="fade-up">
     <h2>Promo Spesial Hari Ini!</h2>
     <p>Diskon besar untuk semua produk fashion pria & wanita!</p>
   </section>
 
   <!-- Produk -->
   <section id="produk" class="produk">
-    <h2>Produk Unggulan</h2>
+    <h2 data-aos="fade-up">Produk Unggulan</h2>
     <div class="produk-grid">
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
         <img src="images/produk1.jpg" alt="Produk 1" />
         <h3>Kemeja Pria Premium</h3>
         <p>Rp 199.000</p>
         <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
       </div>
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
         <img src="images/produk2.jpg" alt="Produk 2" />
         <h3>Celana Slim Fit</h3>
         <p>Rp 179.000</p>
         <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
       </div>
-      <div class="card">
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
         <img src="images/produk3.jpg" alt="Produk 3" />
         <h3>Kaos Casual Wanita</h3>
         <p>Rp 99.000</p>
@@ -234,22 +213,27 @@
   </section>
 
   <!-- Kontak -->
-  <section id="kontak" class="kontak">
+  <section id="kontak" class="kontak" data-aos="fade-up">
     <h2>Hubungi Kami</h2>
     <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer data-aos="fade-up">
     <p>&copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.</p>
   </footer>
 
+  <!-- JS: Keranjang & AOS -->
   <script>
     let count = 0;
     function tambahKeranjang() {
       count++;
       document.getElementById("cart-count").textContent = count;
     }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 </body>
 </html>
