@@ -1,33 +1,129 @@
-/* Header dengan daun */
+<link rel="stylesheet" href="style.css">
+/* ====== Warna Dasar dan Background ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  color: #ffffff;
+}
+
+/* ====== Header dengan daun ====== */
 header {
   background: url('images/daun.jpg') no-repeat center center;
   background-size: cover;
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* ====== Logo dan Nama Toko ====== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #FFA500;
+  animation: pop 2s ease infinite alternate;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #FFA500;
+}
+
+.logo p {
+  font-size: 0.9em;
+  margin: 0;
+  color: #DDDDDD;
+}
+
+/* ====== Navigasi ====== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #1E90FF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FF4C4C;
+}
+
+/* ====== Section Promo / Konten Utama ====== */
+main {
+  padding: 40px 20px;
+  background-color: #222;
+  text-align: center;
+}
+
+main h2 {
+  color: #FFA500;
+  font-size: 2em;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+main p {
+  color: #DDDDDD;
+  font-size: 1.2em;
+}
+
+/* ====== Tombol Aksi ====== */
+button {
+  background-color: #FF4C4C;
   color: white;
-  padding: 30px 0;
-  position: relative;
-  overflow: hidden;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Overlay gelap agar teks terbaca */
-header .overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Animasi tombol */
 button:hover {
-  animation: pulse 0.8s infinite alternate;
+  background-color: #ff3333;
+  transform: scale(1.05);
 }
 
-@keyframes pulse {
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* ====== Animasi Ringan ====== */
+@keyframes pop {
   from { transform: scale(1); }
-  to   { transform: scale(1.05); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
