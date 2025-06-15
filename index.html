@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toko Alvin - Tempat Belanja Termurah</title>
-  <link rel="icon" href="images/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #fdf6e3, #ffffff);
+      background: #f8f8fb;
       color: #333;
     }
 
@@ -103,7 +103,7 @@
     .card {
       background: linear-gradient(145deg, #e0e0e0, #ffffff);
       border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       width: 300px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -111,7 +111,7 @@
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     .card img {
@@ -164,38 +164,39 @@
       text-align: center;
     }
 
-    #tentang {
-      background-color: #fff8e1;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
     @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="happy.mp3" type="audio/mpeg">
+  <!-- Musik Otomatis -->
+  <audio autoplay loop hidden>
+    <source src="happy.mp3" type="audio/mpeg" />
     Browser Anda tidak mendukung audio.
   </audio>
 
   <header>
     <div class="banner-animasi">
-      <img src="images/ronaldo-banner.jpg" alt="Banner Ronaldo">
+      <img src="images/ronaldo-banner.jpg" alt="Banner Ronaldo" />
     </div>
     <div class="container">
-      <img src="images/logo.png" alt="Logo Toko Alvin" class="logo">
+      <img src="images/logo.png" alt="Logo Toko Alvin" class="logo" />
       <div>
         <h1>Toko Alvin</h1>
         <p class="tagline">Tempat Belanja Termurah</p>
       </div>
       <nav>
-        <a href="#">Beranda</a>
+        <a href="index.html">Beranda</a>
         <a href="#produk">Produk</a>
-        <a href="#tentang">Tentang Kami</a>
+        <a href="tentang.html">Tentang Kami</a>
         <a href="#kontak">Kontak</a>
         <a href="#keranjang" class="cart">🛒 <span id="cart-count">0</span></a>
       </nav>
@@ -211,19 +212,19 @@
     <h2>Produk Unggulan</h2>
     <div class="produk-grid">
       <div class="card">
-        <img src="images/produk1.jpg" alt="Produk 1">
+        <img src="images/produk1.jpg" alt="Produk 1" />
         <h3>Kemeja Pria Premium</h3>
         <p>Rp 199.000</p>
         <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
       </div>
       <div class="card">
-        <img src="images/produk2.jpg" alt="Produk 2">
+        <img src="images/produk2.jpg" alt="Produk 2" />
         <h3>Celana Slim Fit</h3>
         <p>Rp 179.000</p>
         <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
       </div>
       <div class="card">
-        <img src="images/produk3.jpg" alt="Produk 3">
+        <img src="images/produk3.jpg" alt="Produk 3" />
         <h3>Kaos Casual Wanita</h3>
         <p>Rp 99.000</p>
         <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
@@ -231,23 +232,10 @@
     </div>
   </section>
 
-  <section id="tentang">
-    <h2>Tentang Kami</h2>
-    <div style="max-width: 800px; margin: 30px auto; line-height: 1.7; font-size: 1rem; color: #444;">
-      <p><strong>Tujuan Kami</strong><br>
-      Kami percaya pada kekuatan transformatif dari teknologi dan ingin mengubah dunia menjadi lebih baik dengan menyediakan platform untuk menghubungkan pembeli dan penjual dalam satu komunitas.</p>
-
-      <p><strong>Posisi Kami</strong><br>
-      Untuk pengguna Internet di seluruh wilayah, Toko Alvin menawarkan pengalaman belanja online komprehensif, dari berbagai pilihan produk sampai ke sebuah komunitas sosial untuk bereksplorasi, dan layanan untuk selalu memenuhi kebutuhan konsumen tanpa hambatan.</p>
-
-      <p><strong>Cara Kami Beroperasi</strong><br>
-      Untuk menggambarkan siapa kami - bagaimana kami berbicara, bertindak, dan bereaksi terhadap situasi tertentu - pada dasarnya, kami <em>Simpel</em>, <em>Bahagia</em>, dan <em>Bersama-sama</em>. Nilai-nilai utama ini selalu terlihat dalam setiap langkah perjalanan Toko Alvin.</p>
-    </div>
-  </section>
-
   <section id="kontak" class="kontak">
     <h2>Hubungi Kami</h2>
-    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
+    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> |
+      WhatsApp: 0812-3456-7890</p>
   </section>
 
   <footer>
