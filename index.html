@@ -6,7 +6,152 @@
   <title>Toko Alvin - Tempat Belanja Termurah</title>
   <link rel="icon" href="images/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: url('images/daun.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 30px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    header .logo {
+      width: 60px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .tagline {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f2f2f2;
+    }
+
+    .produk {
+      padding: 40px 20px;
+      background: #fff;
+    }
+
+    .produk-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fafafa;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
+    .card button {
+      background: #ff6600;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      animation: pulse 0.8s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    .kontak {
+      background: #222;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .kontak a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +161,7 @@
     Browser Anda tidak mendukung audio.
   </audio>
 
-  <!-- Header dengan background daun -->
+  <!-- Header -->
   <header>
     <div class="overlay"></div>
     <div class="container">
