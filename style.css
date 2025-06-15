@@ -1,183 +1,160 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #fff;
-  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f0f0f0;
+  color: #333;
 }
 
 /* Header */
 header {
-  background-image: url('images/bg-header.jpg'); /* ganti sesuai gambar */
+  background: url('images/daun.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  padding: 20px 30px;
+  position: relative;
+  padding: 20px;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  color: white;
 }
 
-.logo-container {
+.logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.logo-container img {
-  height: 60px;
-  margin-right: 15px;
+.logo img {
+  width: 60px;
   border-radius: 50%;
-  background-color: #fff;
-  padding: 5px;
+  animation: pop 2s infinite alternate;
+  border: 2px solid orange;
 }
 
-.logo-container h1 {
-  color: #ffa500;
-  font-size: 28px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.logo-container span {
-  display: block;
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* Navigasi */
 nav a {
-  color: #00aaff;
+  color: #ffd700;
   text-decoration: none;
-  margin: 0 12px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: #fff;
 }
 
-/* Tombol Musik */
-.audio-button {
+/* Banner Promo */
+main {
   text-align: center;
-  margin: 20px 0;
-}
-
-.audio-button button {
-  background-color: #ff4b4b;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.audio-button button:hover {
-  background-color: #ff3333;
-}
-
-/* Promo Section */
-.promo {
-  background-color: #1c1c1c;
-  text-align: center;
+  background: #fff8dc;
   padding: 40px 20px;
 }
 
-.promo h2 {
-  color: #ffa500;
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-.promo p {
-  font-size: 18px;
-  color: #ccc;
-}
-
-/* Produk Section */
-.produk-section {
-  padding: 40px 20px;
-  background-color: #1a1a1a;
-  text-align: center;
-}
-
-.produk-section h3 {
-  font-size: 28px;
-  color: #ffa500;
-  margin-bottom: 30px;
-}
-
-.produk-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  justify-items: center;
-}
-
-/* Kartu Produk */
-.produk {
-  background-color: #2b2b2b;
-  border-radius: 12px;
-  padding: 20px;
+main img.banner-promo {
   width: 100%;
-  max-width: 300px;
-  min-height: 480px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+main h2 {
+  color: #e67e22;
+  font-size: 2em;
+}
+
+main button {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+main button:hover {
+  background: #ff6347;
+  transform: scale(1.05);
+}
+
+/* Produk */
+#produk {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.produk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 260px;
+  padding: 15px;
+  text-align: center;
   transition: transform 0.3s;
 }
 
-.produk:hover {
-  transform: translateY(-5px);
+.card:hover {
+  transform: scale(1.05);
 }
 
-.produk img {
+.card img {
   width: 100%;
-  height: 250px;
+  border-radius: 8px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
 }
 
-.produk h4 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: #fff;
+/* Kontak */
+.kontak {
+  background: #2c3e50;
+  color: white;
+  padding: 40px 20px;
 }
 
-.produk p {
-  color: #ccc;
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.produk button {
-  background-color: #ff4b4b;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.produk button:hover {
-  background-color: #ff2a2a;
+.kontak a {
+  color: #ffa500;
+  text-decoration: none;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
+  background: #111;
+  color: #ccc;
   text-align: center;
   padding: 20px;
-  font-size: 14px;
-  color: #aaa;
 }
 
-footer span {
-  color: #ff5a5a;
+/* Animasi */
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
