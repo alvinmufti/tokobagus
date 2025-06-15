@@ -3,92 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toko Alvin</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Toko Alvin - Belanja Hemat</title>
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- Musik -->
+  <audio autoplay loop muted playsinline>
+    <source src="happy.mp3" type="audio/mpeg" />
+  </audio>
+
   <!-- Header -->
-  <header class="header">
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Logo" class="logo">
-      <div>
-        <h1 class="judul">Toko Alvin</h1>
-        <p class="subjudul">Tempat Belanja Termurah</p>
+  <header>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo">
+        <div>
+          <h1>Toko Alvin</h1>
+          <p>Tempat Belanja Termurah</p>
+        </div>
       </div>
+      <nav>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="nav">
-      <a href="#">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="tentang.html">Tentang Kami</a>
-      <a href="#">Kontak</a>
-    </nav>
   </header>
 
-  <!-- Musik Button -->
-  <div class="musik-container">
-    <button onclick="toggleMusic()" id="musikButton">Putar Musik 🎵</button>
-    <audio id="musik" src="happy.mp3" loop></audio>
-  </div>
-
   <!-- Banner Promo -->
-  <section class="banner">
+  <main>
+    <img src="images/Ronaldo-banner.jpg" alt="Promo Ronaldo" class="banner-promo" />
     <h2>Promo Spesial Hari Ini!</h2>
-    <p>Dapatkan diskon besar untuk semua produk fashion favorit Anda.</p>
+    <p>Dapatkan diskon menarik hanya di Toko Alvin!</p>
+    <button>Belanja Sekarang</button>
+  </main>
+
+  <!-- Produk -->
+  <section id="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="produk-grid">
+      <div class="card">
+        <img src="images/produk1.jpg" alt="Produk 1">
+        <h3>Kemeja Pria Premium</h3>
+        <p>Rp 199.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="images/produk2.jpg" alt="Produk 2">
+        <h3>Celana Slim Fit</h3>
+        <p>Rp 179.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+      <div class="card">
+        <img src="images/produk3.jpg" alt="Produk 3">
+        <h3>Kaos Casual Wanita</h3>
+        <p>Rp 99.000</p>
+        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
+      </div>
+    </div>
   </section>
 
-  <!-- Produk Unggulan -->
-  <section class="produk-unggulan" id="produk">
-    <h2>Produk Unggulan</h2>
-    <div class="produk-container">
-      
-      <div class="produk">
-        <img src="images/produk1.jpg" alt="Kaos Pria">
-        <h3>Kaos Pria</h3>
-        <p>Rp 75.000</p>
-        <button>Beli Sekarang</button>
-      </div>
-
-      <div class="produk">
-        <img src="images/produk2.jpg" alt="Dress Wanita">
-        <h3>Dress Wanita</h3>
-        <p>Rp 120.000</p>
-        <button>Beli Sekarang</button>
-      </div>
-
-      <div class="produk">
-        <img src="images/produk3.jpg" alt="Sepatu Sneakers">
-        <h3>Sepatu Sneakers</h3>
-        <p>Rp 150.000</p>
-        <button>Beli Sekarang</button>
-      </div>
-
-    </div>
+  <!-- Kontak -->
+  <section id="kontak" class="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat. Jasa pembuatan Website bisa kontak kami.</p>
+  <footer>
+    <p>&copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.</p>
   </footer>
 
-  <!-- Script Musik -->
   <script>
-    const musik = document.getElementById("musik");
-    const btn = document.getElementById("musikButton");
-    let isPlaying = false;
-
-    function toggleMusic() {
-      if (isPlaying) {
-        musik.pause();
-        btn.textContent = "Putar Musik 🎵";
-      } else {
-        musik.play();
-        btn.textContent = "Stop Musik 🔇";
-      }
-      isPlaying = !isPlaying;
+    let count = 0;
+    function tambahKeranjang() {
+      count++;
+      alert("Produk berhasil ditambahkan ke keranjang!");
     }
   </script>
-
 </body>
 </html>
