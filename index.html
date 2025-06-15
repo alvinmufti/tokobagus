@@ -228,6 +228,16 @@
     <p>&copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.</p>
   </footer>
 
+  <!-- Musik Latar -->
+  <audio id="bg-music" src="happy.mp3" autoplay loop></audio>
+
+  <!-- Tombol fallback -->
+  <div style="text-align:center; margin: 20px;">
+    <button onclick="document.getElementById('bg-music').play()" style="padding:10px 20px; font-size:16px; border:none; background:#ff9800; color:white; border-radius:8px; cursor:pointer;">
+      🎵 Putar Musik
+    </button>
+  </div>
+
   <script>
     let count = 0;
     function tambahKeranjang() {
