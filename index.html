@@ -6,8 +6,8 @@
   <title>Toko Alvin - Tempat Belanja Termurah</title>
   <link rel="icon" href="images/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
+    /* ====== Warna Dasar dan Background ====== */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -16,6 +16,7 @@
       color: #ffffff;
     }
 
+    /* ====== Header dengan daun ====== */
     header {
       background: url('images/daun.jpg') no-repeat center center;
       background-size: cover;
@@ -24,7 +25,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
     }
 
     .logo {
@@ -47,16 +47,10 @@
       color: #FFA500;
     }
 
-    .logo p {
-      font-size: 0.9em;
-      margin: 0;
-      color: #DDDDDD;
-    }
-
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 20px;
       margin: 0;
       padding: 0;
     }
@@ -65,122 +59,61 @@
       color: #1E90FF;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
       color: #FF4C4C;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #333333, #1a1a1a);
-      padding: 60px 20px;
+    /* ====== Tombol Musik ====== */
+    .musik-wrapper {
       text-align: center;
-      border-top: 3px solid #FFA500;
-      border-bottom: 3px solid #1E90FF;
+      margin: 20px auto;
     }
 
-    .hero img.hero-logo {
-      width: 70px;
-      animation: bounce 2s infinite;
-      margin-bottom: 20px;
-    }
-
-    .hero h2 {
-      color: #FFA500;
-      font-size: 2.5em;
-      margin: 0;
-      animation: slideInDown 1s ease-out;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      color: #CCCCCC;
-      animation: slideInUp 1s ease-out;
-      margin-top: 10px;
-    }
-
-    .produk {
-      padding: 40px 20px;
-      background: #181818;
-    }
-
-    .produk h2 {
-      color: #1E90FF;
-      text-align: center;
-    }
-
-    .produk-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: #222;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-      width: 250px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      margin: 10px 0 5px;
-      color: #FFA500;
-    }
-
-    .card p {
+    .musik-wrapper button {
+      background: #FFA500;
+      color: #000;
       font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .card button {
-      background: #FF4C4C;
-      color: white;
+      padding: 10px 20px;
       border: none;
-      padding: 8px 15px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: 0.3s ease;
     }
 
-    .card button:hover {
-      background-color: #ff3333;
+    .musik-wrapper button:hover {
+      background: #FF4C4C;
+      color: #fff;
       transform: scale(1.05);
     }
 
-    .kontak {
-      background: #111;
-      color: white;
+    /* ====== Konten Utama ====== */
+    main {
       text-align: center;
       padding: 40px 20px;
+      background-color: #222;
     }
 
-    .kontak a {
+    main h2 {
       color: #FFA500;
-      text-decoration: none;
+      animation: fadeInUp 1.2s ease-out;
     }
 
+    main p {
+      font-size: 1.2em;
+      color: #dddddd;
+    }
+
+    /* ====== Footer ====== */
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #000;
+      background-color: #111;
       color: #888;
     }
 
+    /* ====== Animasi Ringan ====== */
     @keyframes pop {
       from { transform: scale(1); }
       to { transform: scale(1.05); }
@@ -197,34 +130,25 @@
       }
     }
 
-    @keyframes slideInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
 
-    @keyframes slideInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Musik Otomatis -->
-  <audio autoplay loop hidden>
-    <source src="happy.mp3" type="audio/mpeg" />
-    Browser Anda tidak mendukung audio.
-  </audio>
-
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Logo Toko Alvin" />
+      <img src="images/logo.png" alt="Logo">
       <div>
         <h1>Toko Alvin</h1>
         <p>Tempat Belanja Termurah</p>
@@ -234,61 +158,36 @@
       <ul>
         <li><a href="#">Beranda</a></li>
         <li><a href="#produk">Produk</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
         <li><a href="#kontak">Kontak</a></li>
-        <li><a href="#keranjang">🛒 <span id="cart-count">0</span></a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero / Promo -->
-  <section class="hero">
-    <img src="images/logo2.png" alt="Logo Promo" class="hero-logo">
+  <!-- Tombol Musik -->
+  <div class="musik-wrapper">
+    <button onclick="putarMusik()">Putar Musik 🎵</button>
+    <audio id="musik" loop>
+      <source src="happy.mp3" type="audio/mpeg" />
+      Browser Anda tidak mendukung audio.
+    </audio>
+  </div>
+
+  <!-- Konten Utama -->
+  <main>
     <h2>Promo Spesial Hari Ini!</h2>
-    <p>Diskon besar untuk semua produk fashion pria & wanita!</p>
-  </section>
-
-  <!-- Produk -->
-  <section id="produk" class="produk">
-    <h2>Produk Unggulan</h2>
-    <div class="produk-grid">
-      <div class="card">
-        <img src="images/produk1.jpg" alt="Produk 1" />
-        <h3>Kemeja Pria Premium</h3>
-        <p>Rp 199.000</p>
-        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
-      </div>
-      <div class="card">
-        <img src="images/produk2.jpg" alt="Produk 2" />
-        <h3>Celana Slim Fit</h3>
-        <p>Rp 179.000</p>
-        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
-      </div>
-      <div class="card">
-        <img src="images/produk3.jpg" alt="Produk 3" />
-        <h3>Kaos Casual Wanita</h3>
-        <p>Rp 99.000</p>
-        <button onclick="tambahKeranjang()">Tambah ke Keranjang</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="kontak" class="kontak">
-    <h2>Hubungi Kami</h2>
-    <p>Email: <a href="mailto:alvinmufti212@gmail.com">alvinmufti212@gmail.com</a> | WhatsApp: 0812-3456-7890</p>
-  </section>
+    <p>Dapatkan diskon besar untuk semua produk fashion favorit Anda.</p>
+  </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.</p>
+    &copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat. Jasa pembuatan Website bisa kontak kami.
   </footer>
 
   <script>
-    let count = 0;
-    function tambahKeranjang() {
-      count++;
-      document.getElementById("cart-count").textContent = count;
+    function putarMusik() {
+      const musik = document.getElementById('musik');
+      musik.play();
     }
   </script>
 
