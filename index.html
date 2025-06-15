@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toko Alvin - Tempat Belanja Termurah</title>
-  <link rel="icon" href="images/logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Toko Alvin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* ====== Warna Dasar dan Background ====== */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -15,38 +15,35 @@
       background: #121212;
       color: #ffffff;
     }
-
-    /* ====== Header dengan daun ====== */
     header {
       background: url('images/daun.jpg') no-repeat center center;
       background-size: cover;
       padding: 20px;
-      color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
     .logo img {
       width: 60px;
-      height: auto;
       border-radius: 50%;
       border: 2px solid #FFA500;
       animation: pop 2s ease infinite alternate;
     }
-
     .logo h1 {
       font-size: 1.8em;
-      margin: 0;
       color: #FFA500;
+      margin: 0;
     }
-
+    .logo p {
+      font-size: 0.9em;
+      color: #DDDDDD;
+      margin: 0;
+    }
     nav ul {
       list-style: none;
       display: flex;
@@ -54,71 +51,54 @@
       margin: 0;
       padding: 0;
     }
-
     nav a {
       color: #1E90FF;
       text-decoration: none;
       font-weight: bold;
     }
-
     nav a:hover {
       color: #FF4C4C;
     }
-
-    /* ====== Tombol Musik ====== */
-    .musik-wrapper {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    .musik-wrapper button {
-      background: #FFA500;
-      color: #000;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .musik-wrapper button:hover {
-      background: #FF4C4C;
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    /* ====== Konten Utama ====== */
     main {
-      text-align: center;
       padding: 40px 20px;
       background-color: #222;
+      text-align: center;
     }
-
     main h2 {
       color: #FFA500;
-      animation: fadeInUp 1.2s ease-out;
+      font-size: 2em;
+      animation: fadeInUp 1.2s ease-out forwards;
     }
-
     main p {
+      color: #DDDDDD;
       font-size: 1.2em;
-      color: #dddddd;
     }
-
-    /* ====== Footer ====== */
+    button {
+      background-color: #FF4C4C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      margin-top: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff3333;
+      transform: scale(1.05);
+    }
     footer {
       text-align: center;
       padding: 20px;
       background-color: #111;
       color: #888;
+      font-size: 0.9em;
     }
-
-    /* ====== Animasi Ringan ====== */
     @keyframes pop {
       from { transform: scale(1); }
       to { transform: scale(1.05); }
     }
-
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -129,26 +109,14 @@
         transform: translateY(0);
       }
     }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo Toko Alvin" />
       <div>
         <h1>Toko Alvin</h1>
         <p>Tempat Belanja Termurah</p>
@@ -156,38 +124,68 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#">Beranda</a></li>
+        <li><a href="#beranda">Beranda</a></li>
         <li><a href="#produk">Produk</a></li>
-        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Tombol Musik -->
-  <div class="musik-wrapper">
-    <button onclick="putarMusik()">Putar Musik 🎵</button>
-    <audio id="musik" loop>
-      <source src="happy.mp3" type="audio/mpeg" />
-      Browser Anda tidak mendukung audio.
-    </audio>
+  <!-- TOMBOL MUSIK -->
+  <div style="text-align: center; background: #111; padding: 10px;">
+    <button onclick="toggleMusic()">Putar Musik 🎵</button>
+    <audio id="bg-music" src="audio/musik.mp3" loop></audio>
   </div>
 
-  <!-- Konten Utama -->
-  <main>
+  <!-- PROMO -->
+  <main id="beranda">
     <h2>Promo Spesial Hari Ini!</h2>
     <p>Dapatkan diskon besar untuk semua produk fashion favorit Anda.</p>
   </main>
 
-  <!-- Footer -->
+  <!-- PRODUK -->
+  <section id="produk" style="padding: 40px 20px; background-color: #1a1a1a;">
+    <h2 style="color: #FFA500; text-align: center;">Produk Unggulan</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+      
+      <!-- Produk 1 -->
+      <div style="background: #2a2a2a; padding: 20px; border-radius: 10px; width: 200px; text-align: center;">
+        <img src="images/produk1.jpg" alt="Produk 1" style="width: 100%; border-radius: 8px;">
+        <h3 style="color: #ffffff;">Kaos Pria</h3>
+        <p style="color: #ccc;">Rp 75.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Produk 2 -->
+      <div style="background: #2a2a2a; padding: 20px; border-radius: 10px; width: 200px; text-align: center;">
+        <img src="images/produk2.jpg" alt="Produk 2" style="width: 100%; border-radius: 8px;">
+        <h3 style="color: #ffffff;">Dress Wanita</h3>
+        <p style="color: #ccc;">Rp 120.000</p>
+        <button>Beli Sekarang</button>
+      </div>
+
+      <!-- Tambah produk lainnya sesuai kebutuhan -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat.
+    <p>© 2025 Toko Alvin. Dibuat dengan ❤️ untuk belanja hemat. Jasa pembuatan Website bisa <a href="#kontak" style="color:#1E90FF;">kontak kami</a>.</p>
   </footer>
 
+  <!-- SCRIPT MUSIK -->
   <script>
-    function putarMusik() {
-      const musik = document.getElementById('musik');
-      musik.play();
+    const music = document.getElementById('bg-music');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
     }
   </script>
 
