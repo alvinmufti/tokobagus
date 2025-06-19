@@ -7,13 +7,31 @@
   <link rel="icon" href="images/logo.jpg">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    #music-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f1c40f;
+      color: #000;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
 
   <!-- Musik -->
-  <audio autoplay loop muted playsinline>
-    <source src="happy.mp3" type="audio/mpeg" />
+  <audio id="bg-music" loop>
+    <!-- GANTI LINK BERIKUT DENGAN LINK GITHUB RAW KAMU -->
+    <source src="https://raw.githubusercontent.com/username/repo/main/happy.mp3" type="audio/mpeg" />
   </audio>
+  <button onclick="toggleMusic()" id="music-button">🎵 Play Music</button>
 
   <!-- Header -->
   <header>
@@ -87,6 +105,23 @@
       count++;
       alert("Produk berhasil ditambahkan ke keranjang!");
     }
+
+    // Musik Play/Pause
+    const music = document.getElementById("bg-music");
+    const button = document.getElementById("music-button");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        button.innerText = "🎵 Play Music";
+      } else {
+        music.play();
+        button.innerText = "⏸ Pause Music";
+      }
+      isPlaying = !isPlaying;
+    }
   </script>
+
 </body>
 </html>
